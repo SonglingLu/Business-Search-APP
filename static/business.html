@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/myStyle.css">
+        <script src="/static/myScripts.js"></script>
+    </head>
+
+
+    <body style="background-color:rgb(236, 236, 236);">
+        <div class="form">
+            <div class="title">
+                <div class="titleText"><p class="title">Business Search</p></div>
+                <div class="subtitleText"><p class="subtitle">Fill out the form to get businesses near you!</p></div>
+            </div>
+
+
+            <div class="input">
+                <form id="form" style="padding-left: 45px; padding-right: 45px;" name="searchForm" onsubmit=" return search()">
+                    <p class="label">Keyword<span style="color: red">*</span></p>
+                    <input class="input" id="keyword" required>
+
+
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="display: inline-block;">
+                            <p class="label">Distance(miles)</p>
+                            <input class="input" id="distance" type="number" value=10 style="width: 150px;" required>
+                        </div>
+
+
+                        <div style="display: inline-block;">
+                            <p class="label">Category<span style="color: red">*</span></p>
+                            <select class="input" id="category" required>
+                                <option value="All" selected>Default</option>
+                                <option value="art">Arts & Entertainment</option>
+                                <option value="health">Health & Medical</option>
+                                <option value="hotelstravel">Hotels & Travel</option>
+                                <option value="food">Food</option>
+                                <option value="professional">Professional Services</option>
+                            </SELECT>
+                        </div>
+                    </div>
+
+
+                    <p class="label">Location<span style="color: red">*</span></p>
+                    <input class="input" id="loc" required>
+
+
+                    <hr style="margin-top: 30px; border-top: 1px solid #3d66ad;">
+
+
+                    <p class="auto-detect">
+                        Want us to auto-detect your location? Check here
+                        <input class="auto-detect" id="auto-detect" type="checkbox" onclick="alterLocation()">
+                    </p>
+
+
+                    <div class="buttons">
+                        <input class="submit" type="submit" value="SUBMIT">
+                        <input class="clear" type="button" onclick="clearPage()" value="CLEAR">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="search_results" id="search_results">
+        </div>
+
+
+        <div class="detail_results" id="detail_results">
+            
+        </div>
+    </body>
+</html>
